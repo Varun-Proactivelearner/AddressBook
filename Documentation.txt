@@ -1,0 +1,569 @@
+Address Book using C-Programming
+
+Project Objective:
+The goal of this project is to "create", "search", "edit", "delete", and "list" contact details like Name, Mobile Number, Email, and Location using C programming.
+
+Features:
+Create Contact
+Search Contact
+Edit Contact
+Delete Contact
+Save and Exit
+
+Contact Details Stored:
+Name
+Mobile Number
+Email
+Location
+
+Feature-by-Feature Explanation:
+1. Create Contact
+step 1: User need to enter all the fields one by one and also need to be validated one by one
+step 2: Write functions for validating each field
+-> Validations:
+ 	Name: Should contain only letters and spaces.
+ 	Mobile: Should be 10 or 11 digits(only digits).
+ 	Email: Must contain '@' and ".com", no uppercase or spaces.
+ 	Location: Should contain only letters and spaces.
+step 3: If any field is invalid ask user again to enter
+step 4: If valid, save it
+step 5: Return to main menu
+
+Output:
+Address Book Menu:
+1. Create contact
+2. Search contact
+3. Edit contact
+4. Delete contact
+5. List all contacts
+6. Exit
+Enter your choice: 1
+Enter name: Varun
+Enter mobile: 7894561230
+Enter email: varun@gmail.com
+Enter location: Austin Bridge
+Contact added successfully.
+
+2. Search Contact
+There are 3 ways of searching.
+- By name
+- By mobile number
+- By email
+
+1. By Name
+   -> Read name from user
+   -> Compare the name with contacts available using strcasestr() fun (for case insensitive)
+   -> Print the matched contacts
+   -> If more than one contact found with same name then ask for serial number
+   -> Print the final matched contact
+
+Output:
+
+Case1:
+
+Address Book Menu:
+1. Create contact
+2. Search contact
+3. Edit contact
+4. Delete contact
+5. List all contacts
+6. Exit
+Enter your choice: 2
+Search by:
+1. Name
+2. Mobile
+3. Email
+Enter choice: 1
+Enter name to search: Varun
+
+Search results:
+--------------------------------------------------------------------------------------------------
+|S.No  | Name                 | Mobile               | Email                    | Location       |
+--------------------------------------------------------------------------------------------------
+|1     | Varun                | 7894561230           | varun@gmail.com          | Austin Bridge  |
+--------------------------------------------------------------------------------------------------
+
+Enter serial number of contact to view details: 1
+
+Selected Contact:
+--------------------------------------------------------------------------------------------------
+|S.No  | Name                 | Mobile               | Email                    | Location       |
+--------------------------------------------------------------------------------------------------
+|1     | Varun                | 7894561230           | varun@gmail.com          | Austin Bridge  |
+--------------------------------------------------------------------------------------------------
+                                            ---
+Case 2:
+
+
+Enter name to search: v 
+
+Search results:
+--------------------------------------------------------------------------------------------------
+|S.No  | Name                 | Mobile               | Email                    | Location       |
+--------------------------------------------------------------------------------------------------
+|1     | Varun                | 7894561230           | varun@gmail.com          | Austin Bridge  |
+--------------------------------------------------------------------------------------------------
+|2     | David                | 9517532486           | david33@gmail.com        | Chicago        |
+--------------------------------------------------------------------------------------------------
+
+Enter serial number of contact to view details: 1
+
+Selected Contact:
+--------------------------------------------------------------------------------------------------
+|S.No  | Name                 | Mobile               | Email                    | Location       |
+--------------------------------------------------------------------------------------------------
+|1     | Varun                | 7894561230           | varun@gmail.com          | Austin Bridge  |
+--------------------------------------------------------------------------------------------------
+
+2. By Mobile
+   -> Read mobile number from user
+   -> Compare the number with contacts available using strstr () fun
+   -> Print the matched contacts
+   -> If more than one contact found with same numbers then ask for serial number
+   -> Print the final matched contact
+
+Output:
+
+case 1:
+
+
+Search by:
+1. Name
+2. Mobile
+3. Email
+Enter choice: 2
+Enter mobile to search: 95
+
+Search results:
+--------------------------------------------------------------------------------------------------
+|S.No  | Name                 | Mobile               | Email                    | Location       |
+--------------------------------------------------------------------------------------------------
+|1     | David                | 9517532486           | david33@gmail.com        | Chicago        |
+--------------------------------------------------------------------------------------------------
+
+Enter serial number of contact to view details: 1
+
+Selected Contact:
+--------------------------------------------------------------------------------------------------
+|S.No  | Name                 | Mobile               | Email                    | Location       |
+--------------------------------------------------------------------------------------------------
+|1     | David                | 9517532486           | david33@gmail.com        | Chicago        |
+--------------------------------------------------------------------------------------------------
+                                            ---
+case 2:
+
+Search by:
+1. Name
+2. Mobile
+3. Email
+Enter choice: 2
+Enter mobile to search: 9
+
+Search results:
+--------------------------------------------------------------------------------------------------
+|S.No  | Name                 | Mobile               | Email                    | Location       |
+--------------------------------------------------------------------------------------------------
+|1     | George               | 7410258963           | george@gmail.com         | Church street  |
+--------------------------------------------------------------------------------------------------
+|2     | John Doe             | 7410852963           | john@example.com         | Los Angeles    |
+--------------------------------------------------------------------------------------------------
+|3     | Smith                | 7531598426           | smith@outlook.com        | San Dieago     |
+--------------------------------------------------------------------------------------------------
+|4     | Varun                | 7894561230           | varun@gmail.com          | Austin Bridge  |
+--------------------------------------------------------------------------------------------------
+|5     | Brad                 | 8546231790           | brad@twitter.com         | Austin         |
+--------------------------------------------------------------------------------------------------
+|6     | David                | 9517532486           | david33@gmail.com        | Chicago        |
+--------------------------------------------------------------------------------------------------
+|7     | Frank                | 9638520741           | franky@outlook.com       | Fresno         |
+--------------------------------------------------------------------------------------------------
+|8     | Byron                | 9874561230           | byron@gmail.com          | Lincoln rd     |
+--------------------------------------------------------------------------------------------------
+
+Enter serial number of contact to view details: 8
+
+Selected Contact:
+--------------------------------------------------------------------------------------------------
+|S.No  | Name                 | Mobile               | Email                    | Location       |
+--------------------------------------------------------------------------------------------------
+|8     | Byron                | 9874561230           | byron@gmail.com          | Lincoln rd     |
+--------------------------------------------------------------------------------------------------
+
+3. By Email
+   -> Read email from user
+   -> Compare the email with contacts available using strcasestr() fun (for case insensitive)
+   -> Print the matched contacts
+   -> If more than one contact found with same name then ask for serial number
+   -> Print the final matched contact
+
+Output:
+
+case 1:
+
+Search by:
+1. Name
+2. Mobile
+3. Email
+Enter choice: 3
+Enter email to search: varun
+
+Search results:
+--------------------------------------------------------------------------------------------------
+|S.No  | Name                 | Mobile               | Email                    | Location       |
+--------------------------------------------------------------------------------------------------
+|1     | Varun                | 7894561230           | varun@gmail.com          | Austin Bridge  |
+--------------------------------------------------------------------------------------------------
+
+Enter serial number of contact to view details: 1
+
+Selected Contact:
+--------------------------------------------------------------------------------------------------
+|S.No  | Name                 | Mobile               | Email                    | Location       |
+--------------------------------------------------------------------------------------------------
+|1     | Varun                | 7894561230           | varun@gmail.com          | Austin Bridge  |
+--------------------------------------------------------------------------------------------------
+                                            ---
+
+case 2:
+
+Search by:
+1. Name
+2. Mobile
+3. Email
+Enter choice: 3
+Enter email to search: gmail
+
+Search results:
+--------------------------------------------------------------------------------------------------
+|S.No  | Name                 | Mobile               | Email                    | Location       |
+--------------------------------------------------------------------------------------------------
+|1     | George               | 7410258963           | george@gmail.com         | Church street  |
+--------------------------------------------------------------------------------------------------
+|2     | Varun                | 7894561230           | varun@gmail.com          | Austin Bridge  |
+--------------------------------------------------------------------------------------------------
+|3     | David                | 9517532486           | david33@gmail.com        | Chicago        |
+--------------------------------------------------------------------------------------------------
+|4     | Byron                | 9874561230           | byron@gmail.com          | Lincoln rd     |
+--------------------------------------------------------------------------------------------------
+
+Enter serial number of contact to view details: 2
+
+Selected Contact:
+--------------------------------------------------------------------------------------------------
+|S.No  | Name                 | Mobile               | Email                    | Location       |
+--------------------------------------------------------------------------------------------------
+|2     | Varun                | 7894561230           | varun@gmail.com          | Austin Bridge  |
+--------------------------------------------------------------------------------------------------
+
+-> If no contacts available print no contacts.
+
+3. Edit Contact
+step 1: declare a integer variable(index)
+step 2: By calling searchcontact function store the return value in index
+step 3: write a switch case, so that user can choose what need to be edited
+step 4: -> If user want to edit name, read new name, validate it, & edit
+ 	-> If user want to edit number, read new number, validate it, & edit
+ 	-> If user want to edit email, read new email, validate it, & edit
+ 	-> If user want to edit location, read new location, validate it, & edit
+step 5: If user chooses exit return to main menu
+
+Output:
+Address Book Menu:
+1. Create contact
+2. Search contact
+3. Edit contact
+4. Delete contact
+5. List all contacts
+6. Save & Exit
+Enter your choice: 3
+
+Search by:
+1. Name
+2. Mobile
+3. Email
+Enter choice: 1
+Enter name to search: f
+
+Search results:
+--------------------------------------------------------------------------------------------------
+|S.No  | Name                 | Mobile               | Email                    | Location       |
+--------------------------------------------------------------------------------------------------
+|1     | Frank                | 9638520741           | franky@outlook.com       | Fresno         |
+--------------------------------------------------------------------------------------------------
+
+Enter serial number of contact to view details: 1
+
+Selected Contact:
+--------------------------------------------------------------------------------------------------
+|S.No  | Name                 | Mobile               | Email                    | Location       |
+--------------------------------------------------------------------------------------------------
+|1     | Frank                | 9638520741           | franky@outlook.com       | Fresno         |
+--------------------------------------------------------------------------------------------------
+
+What do you want to edit?
+1. Name
+2. Mobile
+3. Email
+4. Location
+5. Exit
+Enter choice: 1
+Enter new name: Franky
+
+What do you want to edit?
+1. Name
+2. Mobile
+3. Email
+4. Location
+5. Exit
+Enter choice: 2
+Enter new mobile number: 6547891230
+
+What do you want to edit?
+1. Name
+2. Mobile
+3. Email
+4. Location
+5. Exit
+Enter choice: 3
+Enter new email: franky@gmail.com
+
+What do you want to edit?
+1. Name
+2. Mobile
+3. Email
+4. Location
+5. Exit
+Enter choice: 4
+Enter new location: France
+
+What do you want to edit?
+1. Name
+2. Mobile
+3. Email
+4. Location
+5. Exit
+Enter choice: 5
+
+Contact updated successfully!
+
+-> If no contacts available print no contacts.
+
+4. Delete Contact
+step 1: declare a integer variable(index)
+step 2: By calling searchcontact function store the return value in index
+step 3: By knowing the index position user can know which contact need to be deleted
+step 4: Prompt a confirmation message to delete contact
+step 5: If user pressed 'Y' or 'y' delete i.e., overwrite with the next index contact
+step 6: If user pressed 'N' or 'n' don't delete
+step 7: Return to main
+
+Output:
+Address Book Menu:
+1. Create contact
+2. Search contact
+3. Edit contact
+4. Delete contact
+5. List all contacts
+6. Save & Exit
+Enter your choice: 4
+
+Search by:
+1. Name
+2. Mobile
+3. Email
+Enter choice: 1
+Enter name to search: j
+
+Search results:
+--------------------------------------------------------------------------------------------------
+|S.No  | Name                 | Mobile               | Email                    | Location       |
+--------------------------------------------------------------------------------------------------
+|1     | John Doe             | 7410852963           | john@example.com         | Los Angeles    |
+--------------------------------------------------------------------------------------------------
+
+Enter serial number of contact to view details: 1
+
+Selected Contact:
+--------------------------------------------------------------------------------------------------
+|S.No  | Name                 | Mobile               | Email                    | Location       |
+--------------------------------------------------------------------------------------------------
+|1     | John Doe             | 7410852963           | john@example.com         | Los Angeles    |
+--------------------------------------------------------------------------------------------------
+-----------------------------------------------------
+Are you sure you want to delete this contact? (y/n): y
+-----------------------------------------------------
+-------------------------------
+|Contact deleted successfully.|
+-------------------------------
+
+-> If no contacts available print no contacts.
+
+5. List Contact
+step 1: If user selects list contacts write a switch body
+step 2: In which format the contacts need to be sorted(by name, by number, by email, by location)
+step 3: Using bubble sort, sort the contacts
+ 	-> If by name is selected then print in alphabetical order i.e., A-Z
+ 	-> If by number is selected then print in ascending order i.e., 0-9
+ 	-> If by email is selected then print in alphabetical order i.e., A-Z
+ 	-> If without sorting is selected then print in current order i.e., order as present in file
+
+Output:
+
+case 1: sort by name
+
+Address Book Menu:
+1. Create contact
+2. Search contact
+3. Edit contact
+4. Delete contact
+5. List all contacts
+6. Save & Exit
+Enter your choice: 5
+------------------------
+Select sort criteria:
+1. Sort by name
+2. Sort by phone
+3. Sort by email
+4. Without Sorting
+------------------------
+Enter your choice: 1
+------------------------
+--------------------------------------------------------------------------------------------------
+|S.No  | Name                 | Mobile               | Email                    | Location       |
+--------------------------------------------------------------------------------------------------
+|1     | Brad                 | 8546231790           | brad@twitter.com         | Austin         |
+--------------------------------------------------------------------------------------------------
+|2     | Byron                | 9874561230           | byron@gmail.com          | Lincoln rd     |
+--------------------------------------------------------------------------------------------------
+|3     | David                | 9517532486           | david33@gmail.com        | Chicago        |
+--------------------------------------------------------------------------------------------------
+|4     | Frank                | 9638520741           | franky@outlook.com       | Fresno         |
+--------------------------------------------------------------------------------------------------
+|5     | George               | 7410258963           | george@gmail.com         | Church street  |
+--------------------------------------------------------------------------------------------------
+|6     | John Doe             | 7410852963           | john@example.com         | Los Angeles    |
+--------------------------------------------------------------------------------------------------
+|7     | Smith                | 7531598426           | smith@outlook.com        | San Dieago     |
+--------------------------------------------------------------------------------------------------
+|8     | Varun                | 8795463102           | varun@gmail.com          | San Franscisco |
+--------------------------------------------------------------------------------------------------
+                                            ---
+
+Case 2: sort by number
+
+Select sort criteria:
+1. Sort by name
+2. Sort by phone
+3. Sort by email
+4. Without Sorting
+------------------------
+Enter your choice: 2
+------------------------
+--------------------------------------------------------------------------------------------------
+|S.No  | Name                 | Mobile               | Email                    | Location       |
+--------------------------------------------------------------------------------------------------
+|1     | George               | 7410258963           | george@gmail.com         | Church street  |
+--------------------------------------------------------------------------------------------------
+|2     | John Doe             | 7410852963           | john@example.com         | Los Angeles    |
+--------------------------------------------------------------------------------------------------
+|3     | Smith                | 7531598426           | smith@outlook.com        | San Dieago     |
+--------------------------------------------------------------------------------------------------
+|4     | Brad                 | 8546231790           | brad@twitter.com         | Austin         |
+--------------------------------------------------------------------------------------------------
+|5     | Varun                | 8795463102           | varun@gmail.com          | San Franscisco |
+--------------------------------------------------------------------------------------------------
+|6     | David                | 9517532486           | david33@gmail.com        | Chicago        |
+--------------------------------------------------------------------------------------------------
+|7     | Frank                | 9638520741           | franky@outlook.com       | Fresno         |
+--------------------------------------------------------------------------------------------------
+|8     | Byron                | 9874561230           | byron@gmail.com          | Lincoln rd     |
+--------------------------------------------------------------------------------------------------
+                                            ---
+
+Case 3: sort by email:
+
+Select sort criteria:
+1. Sort by name
+2. Sort by phone
+3. Sort by email
+4. Without Sorting
+------------------------
+Enter your choice: 3
+------------------------
+--------------------------------------------------------------------------------------------------
+|S.No  | Name                 | Mobile               | Email                    | Location       |
+--------------------------------------------------------------------------------------------------
+|1     | Brad                 | 8546231790           | brad@twitter.com         | Austin         |
+--------------------------------------------------------------------------------------------------
+|2     | Byron                | 9874561230           | byron@gmail.com          | Lincoln rd     |
+--------------------------------------------------------------------------------------------------
+|3     | David                | 9517532486           | david33@gmail.com        | Chicago        |
+--------------------------------------------------------------------------------------------------
+|4     | Frank                | 9638520741           | franky@outlook.com       | Fresno         |
+--------------------------------------------------------------------------------------------------
+|5     | George               | 7410258963           | george@gmail.com         | Church street  |
+--------------------------------------------------------------------------------------------------
+|6     | John Doe             | 7410852963           | john@example.com         | Los Angeles    |
+--------------------------------------------------------------------------------------------------
+|7     | Smith                | 7531598426           | smith@outlook.com        | San Dieago     |
+--------------------------------------------------------------------------------------------------
+|8     | Varun                | 8795463102           | varun@gmail.com          | San Franscisco |
+--------------------------------------------------------------------------------------------------
+                                            ---
+
+Case 4: Without sorting:
+
+Select sort criteria:
+1. Sort by name
+2. Sort by phone
+3. Sort by email
+4. Without Sorting
+------------------------
+Enter your choice: 4
+------------------------
+--------------------------------------------------------------------------------------------------
+|S.No  | Name                 | Mobile               | Email                    | Location       |
+--------------------------------------------------------------------------------------------------
+|1     | George               | 7410258963           | george@gmail.com         | Church street  |
+--------------------------------------------------------------------------------------------------
+|2     | John Doe             | 7410852963           | john@example.com         | Los Angeles    |
+--------------------------------------------------------------------------------------------------
+|3     | Smith                | 7531598426           | smith@outlook.com        | San Dieago     |
+--------------------------------------------------------------------------------------------------
+|4     | Varun                | 8795463102           | varun@gmail.com          | San Franscisco |
+--------------------------------------------------------------------------------------------------
+|5     | Brad                 | 8546231790           | brad@twitter.com         | Austin         |
+--------------------------------------------------------------------------------------------------
+|6     | David                | 9517532486           | david33@gmail.com        | Chicago        |
+--------------------------------------------------------------------------------------------------
+|7     | Frank                | 9638520741           | franky@outlook.com       | Fresno         |
+--------------------------------------------------------------------------------------------------
+|8     | Byron                | 9874561230           | byron@gmail.com          | Lincoln rd     |
+--------------------------------------------------------------------------------------------------
+
+-> If no contacts available print no contacts.
+
+5. Save and Exit
+-> If user select save and exit
+-> Open "contacts.txt" file in write mode and modify the list
+-> Terminate the program
+
+Output:
+Address Book Menu:
+1. Create contact
+2. Search contact
+3. Edit contact
+4. Delete contact
+5. List all contacts
+6. Save & Exit
+Enter your choice: 6
+Saving and Exiting...
+
+Concepts Used:
+Structures (struct)
+File handling
+Pointers
+Arrays
+String operations (strcpy, strcmp, strcasestr, strstr)
+Input validation using isalpha, isdigit, etc.
+Loops and conditionals
