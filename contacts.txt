@@ -1,0 +1,10 @@
+Brad,8546231790,brad@twitter.com,Austin
+Byron,9874561230,byron@gmail.com,Lincoln rd
+David,9517532486,david33@gmail.com,Chicago
+Dhruva,8520147963,dhruva@google.com,Vizag
+Frank,9638520741,franky@outlook.com,Fresno
+George,7410258963,george@gmail.com,Church street
+Mark,6321459087,mark@cricket.com,Sydney
+Pawan Kalyan,7419632508,pawan1@gmail.com,Hyderabad
+Smith,7531598426,smith@outlook.com,San Dieago
+Varun Kumar,8795463102,varun@gmail.com,San Franscisco
